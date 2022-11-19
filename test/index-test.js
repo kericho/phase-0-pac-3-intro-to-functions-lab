@@ -1,15 +1,30 @@
 
 describe('shout(string)', function() {
-  it('receives one argument and returns it in all caps', function() {
+  it(`receives one argument and returns it in all caps`, function() {
     expect(shout('hello')).toEqual('HELLO');
   })
 })
+function shout(string) {
+  return string;
+}
+"Hello!".toUpperCase(); // 'HELLO!'
+function shout(string) {
+  return string.toUpperCase();
+}
+
 
 describe('whisper(string)', function() {
   it('receives one argument and returns it in all lowercase', function() {
     expect(whisper('HELLO')).toEqual('hello');
   })
 })
+function whisper(string){
+  return string;
+}
+"hello!" .toLowerCase(); // "hello"
+function whisper(string){
+  return string.toLowerCase();
+}
 
 describe('logShout(string)', function() {
   it('takes a string argument and logs it in all caps using console.log()', function() {
@@ -23,6 +38,10 @@ describe('logShout(string)', function() {
   })
 })
 
+function logShout(aWord){
+  console.log(aWord.toUpperCase());
+}
+
 describe('logWhisper(string)', function() {
   it('takes a string argument and logs it in all lowercase using console.log()', function() {
     const spy = expect.spyOn(console, 'log').andCallThrough();
@@ -34,7 +53,9 @@ describe('logWhisper(string)', function() {
     console.log.restore();
   })
 })
-
+function logWhisper (aWord) {
+  console.log(aWord.toLowerCase( ));
+}
 describe('sayHiToHeadphonedRoommate(string)', function() {
   it('returns "I can\'t hear you!" if `string` is lowercase', function() {
     expect(sayHiToHeadphonedRoommate('hello')).toEqual("I can't hear you!");
@@ -50,3 +71,17 @@ describe('sayHiToHeadphonedRoommate(string)', function() {
     );
   });
 })
+function sayHiToHeadphonedRoommate(aWord){
+  var cantUnswer = "I can\'t hear you!";
+  var yesUnswer = "YES INDEED!";
+  var haveUnswer = "I would love to!";
+  if (aWord.toLowerCase(aWord) === aWord){
+    return cantUnswer;
+  }
+  else if (aWord.toUpperCase(aWord) === aWord) {
+    return yesUnswer;
+}
+  else if ((aWord) === aWord) {
+   return haveUnswer
+}
+}
